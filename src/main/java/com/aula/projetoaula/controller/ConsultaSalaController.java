@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.aula.projetoaula.models.LocalProva;
+
 @Controller
 public class ConsultaSalaController {
 
@@ -16,11 +18,11 @@ public class ConsultaSalaController {
 	}
 
 	@RequestMapping(value = "/consultarSala", method = RequestMethod.POST)
-	public ModelAndView consultarSala(String nome, String curso) {
+	public ModelAndView consultarSala(LocalProva local) {
 		ModelAndView viewRetorno = new ModelAndView("consulta-sala");
-		viewRetorno.addObject("nomeAluno", nome);
+		viewRetorno.addObject("nomeAluno", local.getNome());
 		int sala = 0;
-		if (curso.equals("técnico em informática")) {
+		if (local.getCurso().equals("técnico em informática")) {
 			sala = 22;
 		}
 		viewRetorno.addObject("sala", sala);
