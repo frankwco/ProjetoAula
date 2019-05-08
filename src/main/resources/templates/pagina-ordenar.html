@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmls:th="http://thymeleaf.org"
+	xmls:layout="http://www.ultraq.net/thymeleaf/layout">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Ordenação de Números</h1>
+	<form method="post" action="ordenar">
+		Valor 1: <input type="text" name="valor1"/>
+		Valor 2: <input type="text" name="valor2"/>
+		<input type="submit" value="Consultar"/>
+	</form>
+	
+	<p>
+	<span th:text="${ordenados}"></span> 
+	</p>
+</body>
+</html>
